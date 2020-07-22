@@ -12,6 +12,7 @@ open class ALBottomSheetContainerController: UIViewController {
 
     // MARK: - Properties
 
+    private let shadowView = UIView()
     private let contentViewController: UIViewController?
     private lazy var initialSheetFrame = CGRect(x: 0.0, y: view.frame.maxY, width: view.frame.width, height: view.frame.height)
 
@@ -32,12 +33,14 @@ open class ALBottomSheetContainerController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .clear
         setupGestureRecognizer()
     }
 
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        addShadowView()
         addBottomSheetView()
     }
 
@@ -48,6 +51,19 @@ open class ALBottomSheetContainerController: UIViewController {
     }
 
     // MARK: - Setup
+
+    private func setupGestureRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
+        shadowView.addGestureRecognizer(tapGestureRecognizer)
+    }
+
+    // MARK: - Layout
+
+    private func addShadowView() {
+        shadowView.backgroundColor = .clear
+        shadowView.frame = view.frame
+        view.addSubview(shadowView)
+    }
 
     private func addBottomSheetView() {
         guard let contentViewController = contentViewController else {
@@ -65,16 +81,11 @@ open class ALBottomSheetContainerController: UIViewController {
         contentViewController.view.frame = initialSheetFrame
     }
 
-    private func setupGestureRecognizer() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
-        view.addGestureRecognizer(tapGestureRecognizer)
-    }
-
     // MARK: - Animations
 
     private func displayBackgroundOverlay() {
         UIView.animate(withDuration: 0.2) {
-            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+            self.shadowView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         }
     }
 
@@ -82,7 +93,7 @@ open class ALBottomSheetContainerController: UIViewController {
         UIView.animate(
             withDuration: 0.2,
             animations: {
-                self.view.backgroundColor = .clear
+                self.shadowView.backgroundColor = .clear
                 self.contentViewController?.view.frame = self.initialSheetFrame
             },
             completion: completion
@@ -103,6 +114,7 @@ open class ALBottomSheetContainerController: UIViewController {
             self.contentViewController?.willMove(toParent: nil)
             self.contentViewController?.removeFromParent()
             self.contentViewController?.view.removeFromSuperview()
+            self.dismiss(animated: false, completion: nil)
         }
     }
 }

@@ -18,7 +18,7 @@ open class ALBottomSheetContentController: UIViewController {
     // Helpers
 
     private var dismissTresholdPosition: CGFloat {
-        sheetHeight + 32.0
+        UIScreen.main.bounds.height - sheetHeight + 32.0
     }
 
     private var maximumSheetHeight: CGFloat {
@@ -65,7 +65,7 @@ open class ALBottomSheetContentController: UIViewController {
             options: .curveEaseOut,
             animations: {
                 let frame = self.view.frame
-                let yComponent = UIScreen.main.bounds.height - self.sheetHeight
+                let yComponent = UIScreen.main.bounds.height - min(self.sheetHeight, self.maximumSheetHeight)
                 self.view.frame = .init(x: 0.0, y: yComponent, width: frame.width, height: frame.height)
             },
             completion: nil
@@ -73,6 +73,14 @@ open class ALBottomSheetContentController: UIViewController {
     }
 
     // MARK: - Actions
+
+    public func updateSheetHeight() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.animateSheetToDefaultPosition()
+        }
+    }
+
+    // MARK: - Utilities
 
     @objc
     private func panGesture(recognizer: UIPanGestureRecognizer) {
@@ -86,18 +94,16 @@ open class ALBottomSheetContentController: UIViewController {
         }
     }
 
-    // MARK: - Utilities
-
     private func moveSheet(recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: view)
         let yTranslation = translation.y / 4.0
         let yPosition = view.frame.minY
 
-        guard view.frame.minY > sheetHeight - 36.0 else {
+        guard view.frame.minY > (UIScreen.main.bounds.height - sheetHeight - 32.0) else {
             return playImpactIfPossible()
         }
 
-        if isInteractiveDismissEnabled, view.frame.minY >= dismissTresholdPosition, view.frame.minY <= (dismissTresholdPosition + 6.0) {
+        if isInteractiveDismissEnabled, view.frame.minY >= dismissTresholdPosition, view.frame.minY <= (dismissTresholdPosition + 4.0) {
             playImpactIfPossible()
         } else {
             impactJustOccured = false
