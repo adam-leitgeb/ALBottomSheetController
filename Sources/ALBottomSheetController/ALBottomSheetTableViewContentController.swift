@@ -12,7 +12,7 @@ open class ALBottomSheetTableViewContentController: ALBottomSheetContentControll
 
     // MARK: - Outlets
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak public var tableView: UITableView!
 
     // MARK: - Properties
 
