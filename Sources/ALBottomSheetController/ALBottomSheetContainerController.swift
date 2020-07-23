@@ -10,6 +10,10 @@ import UIKit
 
 open class ALBottomSheetContainerController: UIViewController {
 
+    // MARK: - Types
+
+    public typealias Completion = () -> Void
+
     // MARK: - Properties
 
     private let shadowView = UIView()
@@ -109,12 +113,12 @@ open class ALBottomSheetContainerController: UIViewController {
 
     // MARK: - Utilities
 
-    public func dismissSheet() {
+    public func dismissSheet(then completion: Completion? = nil) {
         hideContentView() { _ in
             self.contentViewController?.willMove(toParent: nil)
             self.contentViewController?.removeFromParent()
             self.contentViewController?.view.removeFromSuperview()
-            self.dismiss(animated: false, completion: nil)
+            self.dismiss(animated: false, completion: completion)
         }
     }
 }
