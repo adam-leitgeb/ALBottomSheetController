@@ -80,11 +80,11 @@ open class ALBottomSheetContentController: UIViewController {
         }
     }
 
-    public func dismissSheet() {
+    public func dismissSheet(then completion: ALBottomSheetContainerController.Completion? = nil) {
         guard let parentSheetContainerController = parent as? ALBottomSheetContainerController else {
             return
         }
-        parentSheetContainerController.dismissSheet()
+        parentSheetContainerController.dismissSheet(then: completion)
     }
 
     // MARK: - Utilities
