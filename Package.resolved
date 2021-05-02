@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DataSource",
+        "repositoryURL": "https://github.com/adam-leitgeb/DataSource.git",
+        "state": {
+          "branch": null,
+          "revision": "f1d9bdc7cdd504c7b1601b715fd2f6bbaa5609b8",
+          "version": "1.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

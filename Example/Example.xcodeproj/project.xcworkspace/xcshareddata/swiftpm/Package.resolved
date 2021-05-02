@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ALKit",
+        "repositoryURL": "https://github.com/adam-leitgeb/ALKit",
+        "state": {
+          "branch": null,
+          "revision": "9477d3bf10eca9ddb43c3b9bf859640762a1f245",
+          "version": "1.0.6"
+        }
+      },
+      {
+        "package": "DataSource",
+        "repositoryURL": "https://github.com/adam-leitgeb/DataSource",
+        "state": {
+          "branch": null,
+          "revision": "f1d9bdc7cdd504c7b1601b715fd2f6bbaa5609b8",
+          "version": "1.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
