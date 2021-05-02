@@ -23,7 +23,6 @@
 		0A08384F263E892000442787 /* ALBottomSheetContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A083849263E892000442787 /* ALBottomSheetContainerController.swift */; };
 		0A083855263E8C5A00442787 /* DataSourcedControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A083852263E8C5A00442787 /* DataSourcedControllerDataSource.swift */; };
 		0A083856263E8C5A00442787 /* DataSourcedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A083853263E8C5A00442787 /* DataSourcedController.swift */; };
-		0A083857263E8C5A00442787 /* DataSourcedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A083854263E8C5A00442787 /* DataSourcedController.xib */; };
 		0A083859263E8F6600442787 /* ALBottomSheetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A083858263E8F6600442787 /* ALBottomSheetCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +43,6 @@
 		0A083849263E892000442787 /* ALBottomSheetContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALBottomSheetContainerController.swift; path = ../../../Sources/ALBottomSheetController/ALBottomSheetContainerController.swift; sourceTree = "<group>"; };
 		0A083852263E8C5A00442787 /* DataSourcedControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSourcedControllerDataSource.swift; path = ../../../Sources/ALBottomSheetController/DataSourcedControllerDataSource.swift; sourceTree = "<group>"; };
 		0A083853263E8C5A00442787 /* DataSourcedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSourcedController.swift; path = ../../../Sources/ALBottomSheetController/DataSourcedController.swift; sourceTree = "<group>"; };
-		0A083854263E8C5A00442787 /* DataSourcedController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DataSourcedController.xib; path = ../../../Sources/ALBottomSheetController/DataSourcedController.xib; sourceTree = "<group>"; };
 		0A083858263E8F6600442787 /* ALBottomSheetCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALBottomSheetCoordinator.swift; path = ../../../Sources/ALBottomSheetController/ALBottomSheetCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +107,6 @@
 				0A083849263E892000442787 /* ALBottomSheetContainerController.swift */,
 				0A083847263E892000442787 /* ALBottomSheetContentController.swift */,
 				0A083853263E8C5A00442787 /* DataSourcedController.swift */,
-				0A083854263E8C5A00442787 /* DataSourcedController.xib */,
 				0A083852263E8C5A00442787 /* DataSourcedControllerDataSource.swift */,
 				0A083858263E8F6600442787 /* ALBottomSheetCoordinator.swift */,
 				0A083846263E892000442787 /* ALBottomSheetTableViewContentController.swift */,
@@ -183,7 +180,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A083816263E6F0D00442787 /* LaunchScreen.storyboard in Resources */,
-				0A083857263E8C5A00442787 /* DataSourcedController.xib in Resources */,
 				0A083829263E71CE00442787 /* BottomDetailForwardCell.xib in Resources */,
 				0A083813263E6F0D00442787 /* Assets.xcassets in Resources */,
 				0A083811263E6F0C00442787 /* Main.storyboard in Resources */,

@@ -12,7 +12,7 @@ open class ALBottomSheetTableViewContentController: ALBottomSheetContentControll
 
     // MARK: - Outlets
 
-    @IBOutlet weak public var tableView: UITableView!
+    var tableView = UITableView()
 
     // MARK: - Properties
 
@@ -33,5 +33,15 @@ open class ALBottomSheetTableViewContentController: ALBottomSheetContentControll
     open func setupTableView() {
         tableView.isScrollEnabled = false
         tableView.tableFooterView = UIView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: tableView.topAnchor),
+            view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor),
+            view.leftAnchor.constraint(equalTo: tableView.leftAnchor),
+            view.rightAnchor.constraint(equalTo: tableView.rightAnchor)
+        ])
     }
 }
