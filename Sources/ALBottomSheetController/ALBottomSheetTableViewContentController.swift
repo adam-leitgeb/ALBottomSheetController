@@ -12,7 +12,7 @@ open class ALBottomSheetTableViewContentController: ALBottomSheetContentControll
 
     // MARK: - Outlets
 
-    var tableView = UITableView()
+    public var tableView = UITableView()
 
     // MARK: - Properties
 
