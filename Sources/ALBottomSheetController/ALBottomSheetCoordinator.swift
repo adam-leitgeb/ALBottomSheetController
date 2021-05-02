@@ -18,7 +18,7 @@ open class ALBottomSheetCoordinator {
     
     // MARK: - Object Lifecycle
 
-    public init(sourceController: UIViewController, sections: [Section]) {
+    open init(sourceController: UIViewController, sections: [Section]) {
         self.sourceController = sourceController
         contentController = DataSourcedController(sections: sections)
         containerController = ALBottomSheetContainerController(contentViewController: contentController)
@@ -27,7 +27,7 @@ open class ALBottomSheetCoordinator {
         
     // MARK: - Actions
 
-    func start() {
+    open func start() {
         containerController.modalPresentationStyle = .overFullScreen
         sourceController?.present(containerController, animated: false, completion: nil)
     }
