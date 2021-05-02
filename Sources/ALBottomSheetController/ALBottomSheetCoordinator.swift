@@ -18,7 +18,7 @@ open class ALBottomSheetCoordinator {
     
     // MARK: - Object Lifecycle
 
-    open init(sourceController: UIViewController, sections: [Section]) {
+    public init(sourceController: UIViewController, sections: [Section]) {
         self.sourceController = sourceController
         contentController = DataSourcedController(sections: sections)
         containerController = ALBottomSheetContainerController(contentViewController: contentController)
